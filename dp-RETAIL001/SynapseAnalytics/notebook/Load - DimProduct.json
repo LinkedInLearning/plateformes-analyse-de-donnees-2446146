@@ -1,0 +1,79 @@
+{
+	"name": "Load - DimProduct",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "spark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "e8e5a007-b998-4954-b59c-24f3f0471607"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "sql"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/a3ff5199-e54c-47de-996a-c9fbb0a8ff6f/resourceGroups/dp-dev-RETAIL001/providers/Microsoft.Synapse/workspaces/dp-retail001-dev-synapse/bigDataPools/spark",
+				"name": "spark",
+				"type": "Spark",
+				"endpoint": "https://dp-retail001-dev-synapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/spark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.2",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"automaticScaleJobs": false
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"collapsed": false
+				},
+				"source": [
+					"INSERT INTO `dwh_Retail`.`DimProduct` \r\n",
+					"SELECT StockItemId\r\n",
+					",StockItemName\r\n",
+					",Brand\r\n",
+					",Size\r\n",
+					",Barcode\r\n",
+					",TaxRate\r\n",
+					",UnitPrice\r\n",
+					",RecommendedRetailPrice\r\n",
+					",TypicalWeightPerUnit\r\n",
+					",MarketingComments\r\n",
+					",InternalComments\r\n",
+					",CustomFields\r\n",
+					",Tags\r\n",
+					",SearchDetails\r\n",
+					",LastEditedBy\r\n",
+					" FROM raw_WideWorldImporters.Warehouse_StockItems"
+				],
+				"execution_count": 2
+			}
+		]
+	}
+}
