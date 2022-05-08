@@ -1,0 +1,14 @@
+{
+    "Code Projet" : "RETAIL001"
+    ,"Nom Projet" : "Projet Ventes"
+    ,"Confidentialite" : "Internal"
+    ,"Description" : "Projets Ventes"
+    ,"Region" : "eastus"
+    ,"Owner" : "Sauget Charles-Henri"
+    ,"Contact" : "xxx@xxxx.fr"
+    ,"Pole":"Marketing"
+    ,"Facturation" : 
+        {
+            "Cost Center" : "CSRTL007"
+        }
+}
