@@ -1,0 +1,25 @@
+{
+	"name": "dwh_Retail",
+	"properties": {
+		"Name": "dwh_Retail",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://lake@dpretail001devadl.dfs.core.windows.net/dwh_Retail",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "dp-retail001-dev-synapse-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "5c3eb7cb-e9a5-4dd4-9e29-861dab9b6855"
+	},
+	"type": "DATABASE"
+}

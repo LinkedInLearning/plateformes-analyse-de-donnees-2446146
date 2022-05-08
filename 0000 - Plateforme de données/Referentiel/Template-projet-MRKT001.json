@@ -1,0 +1,14 @@
+{
+    "Code Projet" : "MRKT001"
+    ,"Nom Projet" : "Projet Marketing"
+    ,"Confidentialite" : "confidential"
+    ,"Description" : "Projets Marketing"
+    ,"Region" : "northeurope"
+    ,"Owner" : "Sauget Charles-Henri"
+    ,"Contact" : "xxx@xxxx.fr"
+    ,"Pole":"Marketing"
+    ,"Facturation" : 
+        {
+            "Cost Center" : "CSMRK002"
+        }
+}

@@ -1,0 +1,70 @@
+{
+	"name": "FactOrder",
+	"properties": {
+		"activities": [
+			{
+				"name": "NTBK - Load FactOrder",
+				"type": "SynapseNotebook",
+				"dependsOn": [
+					{
+						"activity": "Delete - FactOrder",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebook": {
+						"referenceName": "Load - Fact SalesOrder",
+						"type": "NotebookReference"
+					},
+					"snapshot": true,
+					"sparkPool": {
+						"referenceName": "spark",
+						"type": "BigDataPoolReference"
+					}
+				}
+			},
+			{
+				"name": "Delete - FactOrder",
+				"type": "Delete",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Parquet_DWH",
+						"type": "DatasetReference",
+						"parameters": {
+							"Folder": "dwh_Retail/FactOrder"
+						}
+					},
+					"enableLogging": false,
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "Dwh Retail"
+		},
+		"annotations": []
+	}
+}

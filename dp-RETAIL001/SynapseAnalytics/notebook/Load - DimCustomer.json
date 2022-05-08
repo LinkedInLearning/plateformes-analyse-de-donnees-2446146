@@ -1,0 +1,104 @@
+{
+	"name": "Load - DimCustomer",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "spark",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "b4e9fd9f-2d0c-4f72-8da6-f9b06a22497b"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_sparksql",
+				"display_name": "sql"
+			},
+			"language_info": {
+				"name": "sql"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/a3ff5199-e54c-47de-996a-c9fbb0a8ff6f/resourceGroups/dp-dev-RETAIL001/providers/Microsoft.Synapse/workspaces/dp-retail001-dev-synapse/bigDataPools/spark",
+				"name": "spark",
+				"type": "Spark",
+				"endpoint": "https://dp-retail001-dev-synapse.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/spark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "3.2",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"metadata": {
+					"jupyter": {
+						"source_hidden": false,
+						"outputs_hidden": false
+					},
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					},
+					"collapsed": false
+				},
+				"source": [
+					"INSERT INTO `dwh_Retail`.`DimCustomer` \r\n",
+					"SELECT DISTINCT C.CustomerID                      \r\n",
+					"                                ,CustomerName                                  \r\n",
+					"                                ,C.CustomerCategoryID             \r\n",
+					"                                ,CC.CustomerCategoryName                                 \r\n",
+					"                                ,DM.DeliveryMethodName              \r\n",
+					"                                ,AC.CityName\r\n",
+					"                                ,AC.LatestRecordedPopulation\r\n",
+					"                                ,AS.StateProvinceCode\r\n",
+					"                                ,AS.StateProvinceName \r\n",
+					"                                ,AS.SalesTerritory\r\n",
+					"                                ,ACou.CountryName\r\n",
+					"                                ,ACou.FormalName\r\n",
+					"                                ,ACou.IsoAlpha3Code\r\n",
+					"                                ,ACou.CountryType                       \r\n",
+					"                                ,CreditLimit                      \r\n",
+					"                                ,IsStatementSent                  \r\n",
+					"                                ,IsOnCreditHold                   \r\n",
+					"                                ,PaymentDays                      \r\n",
+					"                                ,RunPosition                                    \r\n",
+					"                                ,C.ValidFrom                        \r\n",
+					"                                ,C.ValidTo                          \r\n",
+					"                     FROM `raw_WideWorldImporters`.`Sales_Customers` AS C   \r\n",
+					"                    INNER JOIN `raw_WideWorldImporters`.`Sales_CustomerCategories` AS CC \r\n",
+					"                        ON C.CustomerCategoryId = CC.CustomerCategoryId  \r\n",
+					"                    INNER JOIN `raw_WideWorldImporters`.`Application_DeliveryMethods` AS DM\r\n",
+					"                        ON C.DeliveryMethodID = DM.DeliveryMethodID\r\n",
+					"                    INNER JOIN `raw_WideWorldImporters`.`Application_Cities` AS AC\r\n",
+					"                        ON C.DeliveryCityID = AC.CityID\r\n",
+					"                    INNER JOIN `raw_WideWorldImporters`.`Application_StateProvinces` AS AS\r\n",
+					"                        ON AC.StateProvinceID = AS.StateProvinceID\r\n",
+					"                    INNER JOIN `raw_WideWorldImporters`.`Application_Countries` AS ACou\r\n",
+					"                        ON AS.CountryID = Acou.CountryID\r\n",
+					"                    WHERE C.ValidTo IS NOT NULL;"
+				],
+				"execution_count": 19
+			}
+		]
+	}
+}

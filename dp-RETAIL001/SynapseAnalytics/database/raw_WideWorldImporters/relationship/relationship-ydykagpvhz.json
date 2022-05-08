@@ -1,0 +1,23 @@
+{
+	"name": "relationship-ydykagpvhz",
+	"properties": {
+		"Name": "relationship-ydykagpvhz",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Application_People",
+		"ToTableName": "Sales_Invoices",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PersonID",
+				"ToColumnName": "AccountsPersonID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

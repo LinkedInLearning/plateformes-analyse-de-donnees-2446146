@@ -1,0 +1,14 @@
+{
+    "Code Projet" : "LINK001"
+    ,"Nom Projet" : "Projet Linkedin"
+    ,"Confidentialite" : "INTERNAL"
+    ,"Description" : "Projet de démo formation Linkedin"
+    ,"Region" : "eastus"
+    ,"Owner" : "Sauget Charles-Henri"
+    ,"Contact" : "xxx@xxxx.fr"
+    ,"Pole":"Formation"
+    ,"Facturation" : 
+        {
+            "Cost Center" : "CFORM12001"
+        }
+}

@@ -1,0 +1,23 @@
+{
+	"name": "relationship-ydmshhevvf",
+	"properties": {
+		"Name": "relationship-ydmshhevvf",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sales_Customers",
+		"ToTableName": "Sales_Invoices",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerID",
+				"ToColumnName": "CustomerID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

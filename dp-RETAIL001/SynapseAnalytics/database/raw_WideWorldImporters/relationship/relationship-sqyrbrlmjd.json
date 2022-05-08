@@ -1,0 +1,23 @@
+{
+	"name": "relationship-sqyrbrlmjd",
+	"properties": {
+		"Name": "relationship-sqyrbrlmjd",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Application_DeliveryMethods",
+		"ToTableName": "Sales_Invoices",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "DeliveryMethodID",
+				"ToColumnName": "DeliveryMethodID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

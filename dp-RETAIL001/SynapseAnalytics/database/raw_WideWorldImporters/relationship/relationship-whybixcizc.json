@@ -1,0 +1,23 @@
+{
+	"name": "relationship-whybixcizc",
+	"properties": {
+		"Name": "relationship-whybixcizc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sales_Customers",
+		"ToTableName": "Sales_Invoices",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerID",
+				"ToColumnName": "BillToCustomerID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

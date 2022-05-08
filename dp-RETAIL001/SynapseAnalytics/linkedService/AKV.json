@@ -1,0 +1,10 @@
+{
+	"name": "AKV",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://dp-retail001-dev-kvt.vault.azure.net/"
+		}
+	}
+}

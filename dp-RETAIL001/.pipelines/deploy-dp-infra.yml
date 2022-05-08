@@ -1,0 +1,19 @@
+pool:
+  vmImage: windows-latest
+
+resources:
+  repositories:
+    - repository: infracentrale
+      type: git
+      name: 0000 - Plateforme de données/0000 - Plateforme de données
+      ref: refs/heads/main
+
+stages:
+  - stage: deploiementProjetInfrastructure
+    jobs:
+    - template: .pipelines/deploiement-projet-infrastructure.yml@infracentrale
+      parameters:
+        azureServiceConnection: 'dp-dev-RETAIL001'
+        resourceGroupName: 'dp-dev-RETAIL001'
+        projectName: 'RETAIL001'
+        repositoryAlias: infracentrale

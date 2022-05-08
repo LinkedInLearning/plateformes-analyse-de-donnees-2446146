@@ -1,0 +1,23 @@
+{
+	"name": "relationship-ipnophkvlb",
+	"properties": {
+		"Name": "relationship-ipnophkvlb",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Application_People",
+		"ToTableName": "Sales_InvoiceLines",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PersonID",
+				"ToColumnName": "LastEditedBy"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

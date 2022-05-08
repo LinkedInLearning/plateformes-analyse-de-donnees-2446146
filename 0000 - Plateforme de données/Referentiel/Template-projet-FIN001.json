@@ -1,0 +1,14 @@
+{
+    "Code Projet" : "FIN001"
+    ,"Nom Projet" : "Projet Finance"
+    ,"Confidentialite" : "confidential"
+    ,"Description" : "Projet d'analyse de données financières"
+    ,"Region" : "eastus"
+    ,"Owner" : "Sauget Charles-Henri"
+    ,"Contact" : "xxx@xxxx.fr"
+    ,"Pole":"Finance"
+    ,"Facturation" : 
+        {
+            "Cost Center" : "CFIN025"
+        }
+}
