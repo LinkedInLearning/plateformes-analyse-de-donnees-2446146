@@ -1,0 +1,28 @@
+name: Deploy projet
+parameters:
+  - name: projectCode
+    displayName: "Code du projet"
+  - name: env
+    displayName: "Environnement"
+    values:
+    - dev
+    - uat
+    - prod
+
+variables:
+  azureServiceConnection: 'DP-PRINCIPAL'
+  templatePath: 'Referentiel/Template-projet-${{ parameters.projectCode }}.json'
+
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '$(azureServiceConnection)'
+    scriptType: 'ps'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'UsineDeploiement/deploy-rg.ps1'
+    arguments: '"$(templatePath)" "${{ parameters.env }}"'
+    addSpnToEnvironment: true

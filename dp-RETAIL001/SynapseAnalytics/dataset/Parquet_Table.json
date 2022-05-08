@@ -1,0 +1,41 @@
+{
+	"name": "Parquet_Table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dp-retail001-dev-synapse-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TableName": {
+				"type": "string"
+			},
+			"SchemaName": {
+				"type": "string"
+			},
+			"Confidentiality": {
+				"type": "string"
+			},
+			"Application": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@{dataset().TableName}.parquet",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "raw/@{dataset().Application}/@{dataset().Confidentiality}/@{dataset().SchemaName}_@{dataset().TableName}",
+					"type": "Expression"
+				},
+				"fileSystem": "lake"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

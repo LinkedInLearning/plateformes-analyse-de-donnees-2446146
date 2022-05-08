@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+resources:
+  repositories:
+    - repository: infracentrale
+      type: git
+      name: 0000 - Plateforme de données/0000 - Plateforme de données
+      ref: refs/heads/evol-existingressources
+
+stages:
+  - stage: deploiementProjetInfrastructure
+    jobs:
+    - template: .pipelines/deploiement-projet-infrastructure.yml@infracentrale
+      parameters:
+        azureServiceConnection: 'dp-dev-FIN001'
+        resourceGroupName: 'dp-dev-FIN001'
+        projectName: 'FIN001'
+        repositoryAlias: infracentrale

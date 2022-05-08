@@ -1,0 +1,23 @@
+{
+	"name": "relationship-jkdiipiava",
+	"properties": {
+		"Name": "relationship-jkdiipiava",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "dwh_Retail"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "FactOrder",
+		"ToTableName": "DimCustomer",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "CustomerID",
+				"ToColumnName": "CustomerID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

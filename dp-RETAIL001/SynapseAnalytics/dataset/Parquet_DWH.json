@@ -1,0 +1,26 @@
+{
+	"name": "Parquet_DWH",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dp-retail001-dev-synapse-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Folder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "gold/@{dataset().Folder}",
+					"type": "Expression"
+				},
+				"fileSystem": "lake"
+			}
+		}
+	}
+}

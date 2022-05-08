@@ -1,0 +1,23 @@
+{
+	"name": "relationship-kgrwqjhvrc",
+	"properties": {
+		"Name": "relationship-kgrwqjhvrc",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sales_Orders",
+		"ToTableName": "Sales_OrderLines",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderID",
+				"ToColumnName": "OrderID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

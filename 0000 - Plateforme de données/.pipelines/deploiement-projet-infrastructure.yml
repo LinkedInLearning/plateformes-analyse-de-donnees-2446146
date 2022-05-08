@@ -1,0 +1,23 @@
+parameters:
+  azureServiceConnection : ''
+  resourceGroupName : ''
+  projectName : ''
+
+jobs: 
+  - job: DeployDataPlatformInfrastructure
+    displayName: Deploy Data Platform Infrastructure 👋
+    variables:
+      templateFile: 'Infrastructure/Mesh Node/Infrastructure Mesh.bicep'
+    steps:
+    - checkout: infracentrale
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: ${{ parameters.azureServiceConnection }}
+        scriptType: bash
+        scriptLocation: inlineScript
+        inlineScript: |
+          az deployment group create \
+            --name ExampleDeployment \
+            --resource-group ${{ parameters.resourceGroupName }} \
+            --template-file "$(templateFile)" \
+            --parameters projectName='${{ parameters.projectName }}'

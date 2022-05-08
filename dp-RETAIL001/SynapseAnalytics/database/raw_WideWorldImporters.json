@@ -1,0 +1,25 @@
+{
+	"name": "raw_WideWorldImporters",
+	"properties": {
+		"Name": "raw_WideWorldImporters",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://lake@dpretail001devadl.dfs.core.windows.net/raw/WideWorldImporters",
+			"Properties": {
+				"FormatType": "parquet",
+				"LinkedServiceName": "dp-retail001-dev-synapse-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "e1d08783-9609-41b7-a46d-f3bdfda9de99"
+	},
+	"type": "DATABASE"
+}

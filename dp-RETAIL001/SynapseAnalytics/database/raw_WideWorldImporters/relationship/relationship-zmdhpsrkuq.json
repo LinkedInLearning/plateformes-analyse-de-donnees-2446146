@@ -1,0 +1,23 @@
+{
+	"name": "relationship-zmdhpsrkuq",
+	"properties": {
+		"Name": "relationship-zmdhpsrkuq",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Application_People",
+		"ToTableName": "Sales_Invoices",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "PersonID",
+				"ToColumnName": "SalespersonPersonID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

@@ -1,0 +1,23 @@
+{
+	"name": "relationship-usdbtipdic",
+	"properties": {
+		"Name": "relationship-usdbtipdic",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sales_Invoices",
+		"ToTableName": "Sales_InvoiceLines",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "InvoiceID",
+				"ToColumnName": "InvoiceID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

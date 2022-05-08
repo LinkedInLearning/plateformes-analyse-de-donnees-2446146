@@ -1,0 +1,17 @@
+{
+	"name": "Customer",
+	"properties": {
+		"content": {
+			"query": "SELECT DISTINCT C.CustomerID                      \n            ,CustomerName                     \n            ,BillToCustomerID                 \n            ,C.CustomerCategoryID             \n            ,CC.CustomerCategoryName          \n            ,BuyingGroupID                    \n            ,PrimaryContactPersonID           \n            ,AlternateContactPersonID        \n            ,DM.DeliveryMethodName              \n            ,AC.CityName\n            ,AC.LatestRecordedPopulation\n            ,[AS].StateProvinceCode\n            ,[AS].StateProvinceName \n            ,[AS].SalesTerritory\n            ,ACou.CountryName\n            ,ACou.FormalName\n            ,ACou.IsoAlpha3Code\n            ,ACou.CountryType                       \n            ,CreditLimit                      \n            ,IsStatementSent                  \n            ,IsOnCreditHold                   \n            ,PaymentDays                      \n            ,RunPosition                                    \n            ,C.ValidFrom                        \n            ,C.ValidTo                          \n    FROM raw_WideWorldImporters.dbo.Sales_Customers AS C   \nINNER JOIN raw_WideWorldImporters.dbo.Sales_CustomerCategories AS CC \n    ON C.CustomerCategoryId = CC.CustomerCategoryId  \nINNER JOIN raw_WideWorldImporters.dbo.Application_DeliveryMethods AS DM\n    ON C.DeliveryMethodID = DM.DeliveryMethodID\nINNER JOIN raw_WideWorldImporters.dbo.Application_Cities AS AC\n    ON C.DeliveryCityID = AC.CityID\nINNER JOIN raw_WideWorldImporters.dbo.Application_StateProvinces AS [AS]\n    ON AC.StateProvinceID = [AS].StateProvinceID\nINNER JOIN raw_WideWorldImporters.dbo.Application_Countries AS ACou\n    ON [AS].CountryID = Acou.CountryID\nWHERE C.ValidTo IS NOT NULL",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "relationship-udcliklujy",
+	"properties": {
+		"Name": "relationship-udcliklujy",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "raw_WideWorldImporters"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Sales_Orders",
+		"ToTableName": "Sales_Invoices",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "OrderID",
+				"ToColumnName": "OrderID"
+			}
+		],
+		"RelationshipType": 0
+	},
+	"type": "RELATIONSHIP"
+}

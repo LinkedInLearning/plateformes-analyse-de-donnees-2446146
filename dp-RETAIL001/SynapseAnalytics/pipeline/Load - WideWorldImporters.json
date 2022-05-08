@@ -1,0 +1,100 @@
+{
+	"name": "Load - WideWorldImporters",
+	"properties": {
+		"activities": [
+			{
+				"name": "LKP - Tables",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.00:15:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT [schemaName]= s.name\n, [tableName] = t.name\nFROM sys.tables T\nINNER JOIN sys.schemas S\n\tON T.schema_id = S.schema_id\nWHERE t.name NOT LIKE '%_Archive'\nAND t.name NOT IN ('SystemParameters')\nAND s.name NOT IN ('cdc','dbo')",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "SQL_WWI_Table",
+						"type": "DatasetReference",
+						"parameters": {
+							"TableName": "tables",
+							"SchemaName": "sys"
+						}
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "FELC - Tables",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "LKP - Tables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('LKP - Tables').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "EP - Copy from db to Lake",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "Ingest - Table",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"TableName": {
+										"value": "@item().tableName",
+										"type": "Expression"
+									},
+									"SchemaName": {
+										"value": "@item().schemaName",
+										"type": "Expression"
+									},
+									"Application": {
+										"value": "@pipeline().parameters.metadata.Application",
+										"type": "Expression"
+									},
+									"Confidentiality": {
+										"value": "@pipeline().parameters.metadata.Confidentiality",
+										"type": "Expression"
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"metadata": {
+				"type": "object",
+				"defaultValue": {
+					"Application": "WideWorldImporters",
+					"Confidentiality": "Internal"
+				}
+			}
+		},
+		"annotations": []
+	}
+}
