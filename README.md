@@ -1,10 +1,10 @@
 # L‘essentiel des plateformes d’analyse de données	
 
-Ce dossier Repository est lié au cours `L‘essentiel des plateformes d’analyse de données	`. Le cours entier est disponible sur [LinkedIn Learning][lil-course-url].
+Ce dossier Repository est lié au cours `L‘essentiel des plateformes d’analyse de données`. Le cours entier est disponible sur [LinkedIn Learning][lil-course-url].
 
 ![Nom final de la formation][lil-thumbnail-url] 
 
-DESCRIPTION DE LA FORMATION
+Si vous souhaitez mettre en place une plateforme d'analyse de données au sein de votre entreprise, alors suivez cette formation de Charles-Henri Sauget. Dans le premier chapitre, vous aborderez les enjeux, les cas d'utilisation et les concepts, puis vous verrez en quoi consiste la gouvernance de votre plateforme, la modélisation et la centralisation des données. Vous passerez de la théorie à la pratique avec la préparation et le déploiement d'un environnement cloud Microsoft Azure, et l'analyse de données avec Microsoft Power BI. Enfin, la formation se conclura sur l'exploitation du machine learning, la supervision, la sécurisation et le monitoring de votre plateforme de données.
 
 ## Instructions
 
@@ -23,8 +23,8 @@ La branche master correspond au code à la fin de la formation.
  Retrouvez mes autres formations sur [LinkedIn Learning][lil-URL-trainer].
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
-[lil-course-url]: https://www.linkedin.com/learning/building-a-graphql-project-with-react-js
-[lil-thumbnail-url]: https://cdn.lynda.com/course/2875095/2875095-1615224395432-16x9.jpg
-[lil-URL-trainer]: https://
+[lil-course-url]: https://www.linkedin.com/learning/l-essentiel-des-plateformes-d-analyse-de-donnees
+[lil-thumbnail-url]: https://media-exp1.licdn.com/dms/image/C4E0DAQGOYabFOtOuXw/learning-public-crop_675_1200/0/1659084539044?e=1659945600&v=beta&t=gj84r0tpene0TVyiojjIFsWCFJkjAN8osBgYteRSQTE
+[lil-URL-trainer]: https://www.linkedin.com/learning/instructors/charles-henri-sauget
 
 [1]: # (End of FR-Instruction ###############################################################################################)
