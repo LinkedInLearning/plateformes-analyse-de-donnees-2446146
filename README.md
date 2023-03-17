@@ -24,7 +24,5 @@ La branche master correspond au code à la fin de la formation.
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 [lil-course-url]: https://www.linkedin.com/learning/l-essentiel-des-plateformes-d-analyse-de-donnees
-[lil-thumbnail-url]: https://media-exp1.licdn.com/dms/image/C4E0DAQGOYabFOtOuXw/learning-public-crop_675_1200/0/1659084539044?e=1659945600&v=beta&t=gj84r0tpene0TVyiojjIFsWCFJkjAN8osBgYteRSQTE
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2446146/2446146-1659084518036-16x9.jpg
 [lil-URL-trainer]: https://www.linkedin.com/learning/instructors/charles-henri-sauget
-
-[1]: # (End of FR-Instruction ###############################################################################################)
